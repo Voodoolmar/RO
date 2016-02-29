@@ -1,0 +1,15 @@
+{
+  "name": "RO",
+  "version": "0.0.0",
+  "description": "RO",
+  "main": "app.js",
+  "author": {
+    "name": "voodo",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+	"less-middleware": "*"
+  }
+}

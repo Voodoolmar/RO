@@ -1,0 +1,101 @@
+﻿extends layout
+
+block content
+
+    section#portfolio
+        .container
+            .row
+                .col-lg-12.text-center
+                    h2 Портфолио
+                    hr.star-primary
+            .row
+                .col-sm-4.portfolio-item
+                    a(href="#portfolioModal1", data-toggle="modal").portfolio-link
+                        .caption
+                            .caption-content
+                                i.fa.fa-search-plus.fa-3x
+                        img(src="img/portfolio/cabin.png", class="img-responsive", alt="")
+
+    section#about.success
+        .container
+            .row
+                .col-lg-12.text-center
+                    h2 О нас
+                    hr.star-light
+            .row
+                .col-lg-4.col-lg-offset-2
+                    p 
+                        |Ремонт, как известно, затея довольно хлопотная. 
+                        |Не всегда, есть силы, желания и, что самое главное, умения, чтобы сделать его самостоятельно. 
+                        |В этом случае наша команда готова прийти вам на помощь.
+                        |Мы производим широкий спектр работ, в каждом случае стремясь достичь идеального результата, который превзойдет  все ваши ожидания. 
+                        
+                .col-lg-4
+                    p 
+                        |Мы не передаем заказы другим бригадам. 
+                        |Каждый наш клиент имеет дело с нами лично. 
+                        |Мы повышаем свой профессиональный уровень постоянно. 
+                        |Наша команда дорожит  своей репутацией. 
+                        |Нам выгоднее выполнить свою работу качественно и получить еще одного довольного клиента, чем схалтурить и получить негативные отзывы.
+
+    section#contact
+        .container
+            .row
+                .col-lg-12.text-center
+                    h2 Свяжитесь с нами
+                    hr.star-primary
+            .row
+                .col-lg-8.col-lg-offset-2
+                    form#contactForm(name="sentMessage", novalidate)
+                        .row.control-group
+                            .form-group.col-xs-12.floating-label-form-group.controls
+                                label Как к вам обращаться
+                                input.form-control#name(type="text", placeholder="Имя", required, data-validation-required-message="Введите Ваше имя.")
+                                p.help-block.text-danger
+                        .row.control-group
+                            .form-group.col-xs-12.floating-label-form-group.controls
+                                label Телефон для связи
+                                input.form-control#phone(type="tel", placeholder="Телефон для связи", required, data-validation-required-message="Введите номер для связи с Вами.")
+                                p.help-block.text-danger
+                        .row.control-group
+                            .form-group.col-xs-12.floating-label-form-group.controls
+                                label Опишите проект
+                                textarea.form-control#message(rows="5", placeholder="Опишите проект")
+                                p.help-block.text-danger
+                        br
+                        #success
+                        .row
+                            .form-group.col-xs-12
+                                button(type="submit").btn.btn-success.btn-lg Отправить
+
+
+block modals
+    .portfolio-modal.modal.fade#portfolioModal1(tabindex="-1", role="dialog", aria-hidden="true")
+        .modal-content
+            .close-modal(data-dismiss="modal")
+                .lr
+                    .rl
+            .container
+                .row
+                    .col-lg-8.col-lg-offset-2
+                        .modal-body
+                            h2 Project Title
+                            hr.star-primary
+                            img(src="img/portfolio/cabin.png", alt="").img-responsive.img-centered
+                            p 
+                                |Use this area of the page to describe your project. The icon above is part of a free icon set by 
+                                a(href="https://sellfy.com/p/8Q9P/jV3VZ/") Flat Icons
+                                |On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+                            ul.list-inline.item-details
+                                li Client:
+                                    strong
+                                        a(href="http://startbootstrap.com") Start Bootstrap
+                                li Date:
+                                    strong
+                                        a(href="http://startbootstrap.com") April 2014
+                                li Service:
+                                    strong
+                                        a(href="http://startbootstrap.com") Web Development
+                            button.btn.btn-default(type="button", data-dismiss="modal")
+                                i.fa.fa-times
+                                |Close
