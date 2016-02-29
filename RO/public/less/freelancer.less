@@ -89,6 +89,7 @@ header {
 	}
 
 	.intro-text {
+		text-shadow: -1px 3px 4px rgba(150, 150, 150, 1);
 		.name {
 			display: block;
 			font-family: 'Russo One', sans-serif;
@@ -170,6 +171,7 @@ header {
 .navbar-default,
 .navbar-inverse {
 	border: none;
+	background-color: @brand-primary
 }
 
 section {
@@ -182,8 +184,8 @@ section {
 }
 
 section.success {
-	background: @brand-success;
-	color: white;
+	background: @brand-secondary;
+	color: @brand-primary;
 
 	a,
 	a:hover,
@@ -193,6 +195,14 @@ section.success {
 		color: @brand-primary;
 		outline: none;
 	}
+
+	p{		
+		font-family: 'Neucha', sans-serif;
+	}
+}
+section.secondary{
+	background: @brand-primary;
+	color: @brand-secondary;
 }
 
 @media(max-width:767px) {

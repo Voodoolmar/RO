@@ -2,20 +2,6 @@
 
 block content
 
-    section#portfolio
-        .container
-            .row
-                .col-lg-12.text-center
-                    h2 Портфолио
-                    hr.star-primary
-            .row
-                .col-sm-4.portfolio-item
-                    a(href="#portfolioModal1", data-toggle="modal").portfolio-link
-                        .caption
-                            .caption-content
-                                i.fa.fa-search-plus.fa-3x
-                        img(src="img/portfolio/cabin.png", class="img-responsive", alt="")
-
     section#about.success
         .container
             .row
@@ -38,7 +24,21 @@ block content
                         |Наша команда дорожит  своей репутацией. 
                         |Нам выгоднее выполнить свою работу качественно и получить еще одного довольного клиента, чем схалтурить и получить негативные отзывы.
 
-    section#contact
+    section#portfolio.secondary
+        .container
+            .row
+                .col-lg-12.text-center
+                    h2 Портфолио
+                    hr.star-primary
+            .row
+                .col-sm-4.portfolio-item
+                    a(href="#portfolioModal1", data-toggle="modal").portfolio-link
+                        .caption
+                            .caption-content
+                                i.fa.fa-search-plus.fa-3x
+                        img(src="img/portfolio/cabin.png", class="img-responsive", alt="")
+
+    section#contact.success
         .container
             .row
                 .col-lg-12.text-center
