@@ -1,3 +1,0 @@
-  [90mLESS Parse error :[0m [36mUnrecognised input. Possibly missing something[0m
-  [90mLESS File :[0m [36mD:\Projects\RO\RO\public\less\freelancer.less 487:0[0m
-undefined

@@ -24,25 +24,13 @@ block content
                         |Наша команда дорожит  своей репутацией. 
                         |Нам выгоднее выполнить свою работу качественно и получить еще одного довольного клиента, чем схалтурить и получить негативные отзывы.
 
-    section#portfolio.secondary
-        .container
-            .row
-                .col-lg-12.text-center
-                    h2 Портфолио
-                    hr.star-primary
-            .row
-                .col-sm-4.portfolio-item
-                    a(href="#portfolioModal1", data-toggle="modal").portfolio-link
-                        .caption
-                            .caption-content
-                                i.fa.fa-search-plus.fa-3x
-                        img(src="img/portfolio/cabin.png", class="img-responsive", alt="")
+
 
     section#contact
         .container
             .row
                 .col-lg-12.text-center
-                    h2 Свяжитесь с нами
+                    h2 Оставить заявку
                     hr.star-primary
             .row
                 .col-lg-8.col-lg-offset-2
@@ -59,8 +47,13 @@ block content
                                 p.help-block.text-danger
                         .row.control-group
                             .form-group.col-xs-12.floating-label-form-group.controls
-                                label Опишите проект
-                                textarea.form-control#message(rows="5", placeholder="Опишите проект")
+                                label Адрес помещения
+                                input.form-control(type="text", placeholder="Адрес помещения")
+                                p.help-block.text-danger
+                        .row.control-group
+                            .form-group.col-xs-12.floating-label-form-group.controls
+                                label Опишите виды нужных работ
+                                textarea.form-control#message(rows="5", placeholder="Опишите виды нужных работ")
                                 p.help-block.text-danger
                         br
                         #success
