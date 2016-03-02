@@ -10,7 +10,7 @@ block content
         .container
             .table-responsive
                 table.table.table-hover.table-bordered
-                    tr
+                    tr.info
                         th Наименование
                         th Ед.изм.
                         th Цена
@@ -18,11 +18,11 @@ block content
                         th Сумма
                     each group in price
                         tr
-                            td(colspan=6)
+                            td(colspan=6).success
                                 h3= group.name
                         each subgroup in group.groups
                             tr 
-                                td(colspan=6)
+                                td(colspan=6).warning
                                     h4= subgroup.name
                             each item in subgroup.items
                                 tr(style='line-height: 2.428571')
