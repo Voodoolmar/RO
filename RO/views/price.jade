@@ -1,0 +1,64 @@
+﻿extends layout
+
+block content
+
+    
+        .row
+            .col-lg-12.text-center
+                h2 Прайс
+                hr.star-primary
+        .container
+            .table-responsive
+                table.table.table-hover.table-bordered
+                    tr
+                        th Наименование
+                        th Ед.изм.
+                        th Цена
+                        th Количество
+                        th Сумма
+                    each group in price
+                        tr
+                            td(colspan=6)
+                                h3= group.name
+                        each subgroup in group.groups
+                            tr 
+                                td(colspan=6)
+                                    h4= subgroup.name
+                            each item in subgroup.items
+                                tr(style='line-height: 2.428571')
+                                    each i in item
+                                        td= i
+                                    td.col-xs-2(style='padding: 2px')
+                                        input.form-control.input-sm(type='number')
+                                    td
+                    tr
+                        td(colspan=4)
+                            span.pull-right Итого по смете:
+                        td 
+
+block scripts
+    script(type='text/javascript').
+        $(document).ready(function(){
+            $('td input').on('change keyup', function() {
+                var el = $(this);
+                var val = el.val();
+                var row = el.parent().parent();
+                var p = row.find('td')[2];
+                var e = row.find('td')[4];
+                if(p && e){
+                    $(e).html(parseFloat($(p).html())*parseFloat(val))
+                }
+                var estimation = 0;
+                var table = el.parents('table tbody');
+                table.find('tr').each(function(){
+                    var row = $(this);
+                    var rowEstimate = row.find('td')[4];
+                    if(rowEstimate){
+                        var e = parseFloat($(rowEstimate).html());
+                        if(e)
+                        estimation+=e;
+                    }
+                })
+                table.find('tr').last().find('td').last().html(estimation);
+            }); 
+        });

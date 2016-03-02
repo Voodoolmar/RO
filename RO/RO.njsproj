@@ -40,6 +40,7 @@
     <Compile Include="public\js\freelancer.js" />
     <Compile Include="public\js\jqBootstrapValidation.js" />
     <Compile Include="public\js\jquery.js" />
+    <Compile Include="price\index.js" />
     <Compile Include="routes\index.js" />
   </ItemGroup>
   <ItemGroup>
@@ -101,11 +102,13 @@
     <Content Include="public\less\mixins.less" />
     <Content Include="public\less\variables.less" />
     <Content Include="README.md" />
+    <Content Include="views\price.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="price\" />
     <Folder Include="public\" />
     <Folder Include="public\css\" />
     <Folder Include="public\font-awesome\" />

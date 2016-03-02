@@ -31,8 +31,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/about', routes.about);
-app.get('/contact', routes.contact);
+app.get('/price', routes.price);
 
 http.createServer(app).listen(app.get('port'), function () {
 });
