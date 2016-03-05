@@ -8,32 +8,32 @@ block content
                 h2 Прайс
                 hr.star-primary
         .container
-            table.table.table-hover.table-bordered
-                tr.info
-                    th Наименование
-                    th Ед.изм.
-                    th Цена
-                    th Количество
-                    th Сумма
-                each group in price
-                    tr
-                        td(colspan=6).success
-                            h3= group.name
-                    each subgroup in group.groups
-                        tr 
-                            td(colspan=6).warning
-                                h4= subgroup.name
-                        each item in subgroup.items
-                            tr(style='line-height: 2.428571')
-                                each i in item
-                                    td= i
-                                td.col-xs-1(style='padding: 2px')
-                                    input.form-control.input-sm(type='number')
-                                td
-                tr
-                    td(colspan=4)
-                        span.pull-right Итого по смете:
-                    td 
+            .row
+                .col-md-8.col-xs-12 Наименование
+                .col-md-1.col-xs-3 Ед.изм.
+                .col-md-1.col-xs-3 Цена
+                .col-md-1.col-xs-3 Количество
+                .col-md-1.col-xs-3 Сумма
+            each group in price
+                .row
+                    .col-md-12
+                        h3= group.name
+                each subgroup in group.groups
+                    .row 
+                        .col-md-12
+                            h4= subgroup.name
+                    each item in subgroup.items
+                        .row 
+                            .col-md-8= item[0]
+                            .col-md-1.col-xs-3= item[1]
+                            .col-md-1.col-xs-3= item[2]
+                            .col-md-1.col-xs-3
+                                input.form-control.input-sm(type='number')
+                            .col-md-1.col-xs-3
+            tr
+                td(colspan=4)
+                    span.pull-right Итого по смете:
+                td 
 
 block scripts
     script(type='text/javascript').
