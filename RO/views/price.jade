@@ -9,20 +9,18 @@ block content
                 hr.star-primary
         .container
             table.table.table-hover.table-bordered
-                tr.info
-                    th Наименование
-                    th Ед.изм.
-                    th Цена
-                    th Количество
-                    th Сумма
                 each group in price
                     tr
-                        td(colspan=6).success
+                        td(colspan=5).success
                             h3= group.name
                     each subgroup in group.groups
-                        tr 
-                            td(colspan=6).warning
-                                h4= subgroup.name
+                        tr.warning
+                            td
+                                h4= subgroup.name                            
+                            td Ед.изм.
+                            td Цена
+                            td Количество
+                            td Сумма
                         each item in subgroup.items
                             tr(style='line-height: 2.428571')
                                 each i in item

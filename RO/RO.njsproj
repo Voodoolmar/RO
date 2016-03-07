@@ -86,6 +86,8 @@
     <Content Include="public\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="public\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="public\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="public\img\1.png" />
+    <Content Include="public\img\2.png" />
     <Content Include="public\img\favicon.ico" />
     <Content Include="public\img\logo-sm.png" />
     <Content Include="public\img\logo-xs.png" />
@@ -98,10 +100,13 @@
     <Content Include="public\img\portfolio\safe.png" />
     <Content Include="public\img\portfolio\submarine.png" />
     <Content Include="public\img\profile.png" />
+    <Content Include="public\img\2.jpg" />
+    <Content Include="public\img\1.jpg" />
     <Content Include="public\less\freelancer.less" />
     <Content Include="public\less\mixins.less" />
     <Content Include="public\less\variables.less" />
     <Content Include="README.md" />
+    <Content Include="views\newprice.jade" />
     <Content Include="views\price.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
