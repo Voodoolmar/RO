@@ -47,6 +47,7 @@
     <Content Include="package.json" />
     <Content Include="public\css\bootstrap.css" />
     <Content Include="public\css\bootstrap.min.css" />
+    <Content Include="public\css\elastislide.css" />
     <Content Include="public\css\freelancer.css" />
     <Content Include="public\font-awesome\css\font-awesome.css" />
     <Content Include="public\font-awesome\css\font-awesome.min.css" />
@@ -93,12 +94,6 @@
     <Content Include="public\img\logo-xs.png" />
     <Content Include="public\img\logo.png" />
     <Content Include="public\img\original.jpg" />
-    <Content Include="public\img\portfolio\cabin.png" />
-    <Content Include="public\img\portfolio\cake.png" />
-    <Content Include="public\img\portfolio\circus.png" />
-    <Content Include="public\img\portfolio\game.png" />
-    <Content Include="public\img\portfolio\safe.png" />
-    <Content Include="public\img\portfolio\submarine.png" />
     <Content Include="public\img\profile.png" />
     <Content Include="public\img\2.jpg" />
     <Content Include="public\img\1.jpg" />

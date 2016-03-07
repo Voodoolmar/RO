@@ -5,7 +5,7 @@
 
 exports.index = function (req, res) {
 	var files = [];
-    walkSync('public/img/portfolio', function (filePath, stat) {
+    walkSync('public/img/portfolio/thumbnails', function (filePath, stat) {
 	    files.push(filePath);
     });
 

@@ -1,6 +1,18 @@
 ﻿extends layout
 
 block content
+
+    script#img-wrapper-tmpl(type='text/x-jquery-tmpl')
+        .rg-image-wrapper
+            .rg-image-nav
+                a(href='#').rg-image-nav-prev Previous Image
+                a(href='#').rg-image-nav-next Next Image
+            .rg-image
+            .rg-loading
+            .rg-caption-wrapper
+                .rg-caption(style='display:none')
+                    p
+
     header
         .container
             .row
@@ -14,27 +26,7 @@ block content
                         br
                         br
                         a(href="/price").btn.btn-success.btn-lg Online смета
-    section#portfolio
-        .container
-            .row
-                .col-lg-12.text-center
-                    h2 Портфолио
-                    hr.star-light
-            #carousel-example-generic.carousel.slide(data-ride='carousel')
-                ol.carousel-indicators                
-                    each file in files
-                        li(data-target='#carousel-example-generic', data-slide-to='#{files.indexOf(file)}')(class=files.indexOf(file)===0 ? "active" : "")
-                .carousel-inner(role='listbox')
-                    each file in files
-                        .item(class=files.indexOf(file)===0 ? "active" : "")
-                            img(src='img/portfolio/#{file}', alt='...')
-
-                a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
-                    span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
-                    span.sr-only Previous
-                a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
-                    span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
-                    span.sr-only Next
+                        
     section#about.success
         .container
             .row
@@ -58,6 +50,20 @@ block content
                         |Нам выгоднее выполнить свою работу качественно и получить еще одного довольного клиента, чем схалтурить и получить негативные отзывы.
 
 
+                        
+    section#portfolio
+        .container
+            #rg-gallery.rg-gallery
+                .rg-thumbs
+                    .es-carousel-wrapper
+                        .es-nav
+                            span.es-nav-prev Предыдущий
+                            span.es-nav-next Следующий
+                        .es-carousel
+                            ul                               
+                                each file in files
+                                    li
+                                        img(src='img/portfolio/thumbnails/#{file}', data-large="img/portfolio/#{file}", alt='...', style='width:65px')
 
     section#contact
         .container
