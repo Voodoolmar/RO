@@ -28,7 +28,7 @@ exports.contactme = function (req, res) {
     var smtpTransport = mailer.createTransport('smtps://info%40ro54.ru:beltyukov2009@smtp.yandex.ru');
     
     var mail = {
-        from: "info@ro54.ru",
+        from: params.email,
         to: "Beltyukov2008@mail.ru",
         subject: "Письмо с сайта",
         text: "Письмо с сайта",

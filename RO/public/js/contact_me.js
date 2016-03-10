@@ -13,6 +13,7 @@
             // get values from FORM
             var name = $("input#name").val();
             var phone = $("input#phone").val();
+            var email = $("input#email").val();
             var address = $("input#address").val();
             var message = $("textarea#message").val();
             var firstName = name; // For Success/Failure Message
@@ -26,6 +27,7 @@
                 data: {
                     name: name,
                     phone: phone,
+                    email: email,
                     address: address,
                     message: message
                 },

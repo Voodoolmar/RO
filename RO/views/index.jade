@@ -53,17 +53,22 @@ block content
                         
     section#portfolio
         .container
-            #rg-gallery.rg-gallery
-                .rg-thumbs
-                    .es-carousel-wrapper
-                        .es-nav
-                            span.es-nav-prev Предыдущий
-                            span.es-nav-next Следующий
-                        .es-carousel
-                            ul                               
-                                each file in files
-                                    li
-                                        img(src='img/portfolio/thumbnails/#{file}', data-large="img/portfolio/#{file}", alt='...', style='width:65px')
+            .row
+                .col-lg-12.text-center
+                    h2 Наши реальные работы
+                    hr.star-primary
+            .row
+                #rg-gallery.rg-gallery
+                    .rg-thumbs
+                        .es-carousel-wrapper
+                            .es-nav
+                                span.es-nav-prev Предыдущий
+                                span.es-nav-next Следующий
+                            .es-carousel
+                                ul                               
+                                    each file in files
+                                        li
+                                            img(src='img/portfolio/thumbnails/#{file}', data-large="img/portfolio/#{file}", alt='...', style='width:65px')
 
     section#contact
         .container
@@ -83,6 +88,11 @@ block content
                             .form-group.col-xs-12.floating-label-form-group.controls
                                 label Телефон для связи
                                 input.form-control#phone(type="tel", placeholder="Телефон для связи", required, data-validation-required-message="Введите номер для связи с Вами.")
+                                p.help-block.text-danger
+                        .row.control-group
+                            .form-group.col-xs-12.floating-label-form-group.controls
+                                label Email
+                                input.form-control#email(type="email", placeholder="Email для связи", data-validation-required-message="Введите Email для связи с Вами.")
                                 p.help-block.text-danger
                         .row.control-group
                             .form-group.col-xs-12.floating-label-form-group.controls
