@@ -91,7 +91,11 @@ html
                                     i.fa.fa-fw.fa-vk
                             li
                                 a(href="https://www.facebook.com/sharer/sharer.php?u=http://ro54.ru",title="Опубликовать ссылку в Twitter",target="_blank").btn-social.btn-outline
-                                    i.fa.fa-fw.fa-twitter  
+                                    i.fa.fa-fw.fa-twitter
+
+                    .footer-col.col-md-4
+                        #vk_groups
+
                                                               
         .footer-below
             .container
@@ -109,5 +113,9 @@ html
     script(src='/js/cbpAnimatedHeader.js')
     script(src='/js/jqBootstrapValidation.js')
     script(src='/js/freelancer.js')
+    script(src='//vk.com/js/api/openapi.js?121')
+
+    script(type="text/javascript").
+        VK.Widgets.Group("vk_groups", {mode: 2, width: "220", height: "220"}, 114575790);
 
     block scripts
