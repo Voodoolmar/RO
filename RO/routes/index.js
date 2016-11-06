@@ -1,14 +1,36 @@
 ﻿var price = require("../price");
 var mailer = require("nodemailer");
+var path = require("path");
+var portfolioPath = 'public/img/portfolio';
+var fs = require('fs');
 /*
  * GET home page.
  */
 
 exports.index = function (req, res) {
-	var files = [];
-    walkSync('public/img/portfolio/thumbnails', function (filePath, stat) {
-	    files.push(filePath);
+    var files = [];
+    var albums = {}
+    walkSync(portfolioPath, function (filePath, name) {
+        if (!albums[filePath]) {
+            albums[filePath] = []
+        }
+        var fullPath = path.join(filePath, name);
+        albums[filePath].push({
+            fullPath: fullPath,
+            name: name
+        })
     });
+    
+    for (var i in albums) {
+        var album = albums[i];
+        var descriptionPath = path.join(portfolioPath, path.dirname(album[0].fullPath), 'description.js')
+        if (fs.existsSync(descriptionPath)) {
+            var json = JSON.parse(fs.readFileSync(descriptionPath, 'utf8'));
+            album.title = json.title;
+            album.description = json.description;
+        }
+        files.push(album)
+    }
 
     res.render('index', {
         title: 'Ремонт и отделка',
@@ -63,15 +85,15 @@ exports.contactme = function (req, res) {
 };
 
 function walkSync(currentDirPath, callback) {
-    var fs = require('fs'),
-        path = require('path');
     fs.readdirSync(currentDirPath).forEach(function (name) {
         var filePath = path.join(currentDirPath, name);
+        if (path.extname(name) == '.js') return;
         var stat = fs.statSync(filePath);
+        if (name == 'thumbnails') return;
         if (stat.isFile()) {
-            callback(path.basename(filePath), stat);
+            callback(path.basename(currentDirPath), name);
         } else if (stat.isDirectory()) {
-            walkSync(path.basename(filePath), callback);
+            walkSync(filePath, callback);
         }
     });
 }

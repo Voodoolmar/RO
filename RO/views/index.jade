@@ -57,18 +57,22 @@ block content
                 .col-lg-12.text-center
                     h2 Наши реальные работы
                     hr.star-primary
-            .row
-                #rg-gallery.rg-gallery
-                    .rg-thumbs
-                        .es-carousel-wrapper
-                            .es-nav
-                                span.es-nav-prev Предыдущий
-                                span.es-nav-next Следующий
-                            .es-carousel
-                                ul                               
-                                    each file in files
-                                        li
-                                            img(src='img/portfolio/thumbnails/#{file}', data-large="img/portfolio/#{file}", alt='...', style='width:65px')
+                 
+            each files1 in files
+                .row
+                    h3 #{files1.title}
+                    p(style='font-size:14px') #{files1.description}
+                    .rg-gallery
+                        .rg-thumbs
+                            .es-carousel-wrapper
+                                .es-nav
+                                    span.es-nav-prev Предыдущий
+                                    span.es-nav-next Следующий
+                                .es-carousel
+                                    ul                               
+                                        each file in files1
+                                            li
+                                                img(src='img/portfolio/thumbnails/#{file.name}', data-large="img/portfolio/#{file.fullPath}", alt='...', style='width:65px')
 
     section#contact
         .container
